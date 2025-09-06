@@ -5,11 +5,13 @@ import pandas as pd
 #load final filtered csv file
 data = pd.read_csv('processed_sales.csv')
 
+data = data.sort_values(by='date')
+
 
 #make graph
-fig = px.line(data, x='date', y='sales', title='Pink Morsel Sales Data')
+fig = px.line(data, x='date', y='sales', color='region', title='Pink Morsel Sales Data')
 
-
+#make dash app
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     html.H1(children='Pink Morsel sales data'),
