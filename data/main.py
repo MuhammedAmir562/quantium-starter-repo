@@ -19,10 +19,12 @@ sales_df['sales'] = sales_df['price'] * sales_df['quantity']
 
 #filter out only pink morsel
 pink_morsel = sales_df[sales_df['product'] == "pink morsel"]
+
 #split up to before 15jan21 and after
 before_df = pink_morsel[pink_morsel['date'] < '2021-01-15']
 after_df = pink_morsel[pink_morsel['date'] >= '2021-01-15']
 
+#testing
 #print(pink_morsel)
 #print(before_df)
 ##print(after_df)
