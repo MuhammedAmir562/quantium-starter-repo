@@ -36,3 +36,5 @@ after_df = pink_morsel[pink_morsel['date'] >= '2021-01-15']
 #task 2 final answer
 final_db = pink_morsel[['sales', 'date', 'region']]
 print(final_db)
+
+final_db.to_csv('processed_sales.csv', index=False)

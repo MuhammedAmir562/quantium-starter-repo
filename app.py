@@ -1,0 +1,20 @@
+from dash import dash, dcc, html
+import plotly.express as px
+import pandas as pd
+
+#load final filtered csv file
+data = pd.read_csv('processed_sales.csv')
+
+
+#make graph
+fig = px.line(data, x='date', y='sales', title='Pink Morsel Sales Data')
+
+
+app = dash.Dash(__name__)
+app.layout = html.Div(children=[
+    html.H1(children='Pink Morsel sales data'),
+
+    dcc.Graph(figure=fig),
+])
+if __name__ == '__main__':
+    app.run(debug=True)
